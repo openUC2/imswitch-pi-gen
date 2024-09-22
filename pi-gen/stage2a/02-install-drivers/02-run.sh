@@ -38,9 +38,6 @@ echo "Y En Y" | /tmp/Galaxy_Linux-armhf_Gige-U3_32bits-64bits_1.5.2303.9202/Gala
 # Set the library path
 export LD_LIBRARY_PATH="/usr/lib:/tmp/Galaxy_Linux-armhf_Gige-U3_32bits-64bits_1.5.2303.9202:$LD_LIBRARY_PATH"
 
-# Install Python packages
-pip3 install pillow numpy
-
 # Source the bashrc file
-echo "source ~/.bashrc" >> ~/.bashrc
-source ~/.bashrc
+#echo "source ~/.bashrc" >> ~/.bashrc
+#source ~/.bashrc

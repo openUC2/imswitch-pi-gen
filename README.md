@@ -5,13 +5,16 @@ This repository is intended to become the new home for the OpenFlexure OS image 
 ## pull submodules 
 
 ``` 
+git submodule add https://github.com/RPi-Distro/pi-gen
 git submodule update --init --recursive
+
 cd pi-gen
 git checkout 2024-07-04-raspios-bookworm-arm64
+cd .. 
 chmod +x patch_pi_gen.sh
 ./patch_pi_gen.sh
 cd pi-gen 
-./build-docker.sh
+sudo ./build-docker.sh
 ```
 
 ## Building

@@ -1,6 +1,7 @@
-# Openflexure Pi OS
+# ImSwitch Pi OS
 
-This repository is intended to become the new home for the OpenFlexure OS image (currently generated in the `openflexure/pi-gen` repository).  It will include `pi-gen` from upstream (i.e. the Raspberry Pi project) as a submodule, in order to better separate the OpenFlexure-specific modifications from the upstream project.
+This repository is intended to become the new home for the ImSwitch OS image (currently generated in the `imswitch-pi-gen` repository).  It will include `pi-gen` from upstream (i.e. the Raspberry Pi project) as a submodule, in order to better separate the ImSwitch-specific modifications from the upstream project.
+This is heavily inspired by the Opflexure Pi-Gen image. 
 
 ## pull submodules 
 
@@ -21,8 +22,8 @@ sudo ./build-docker.sh
 
 Building the OS takes a while! There are a few basic steps:
 
-* Clone the project including the `pi-gen` submodule. See below for explanation - the command `git clone --recurse-submodules https://gitlab.com/openflexure/openflexure-pi-os.git` should work.
-* Add in the OpenFlexure-specific configuration and install steps by running `./patch_pi_gen.sh`.
+* Clone the project including the `pi-gen` submodule. See below for explanation - the command `git clone --recurse-submodules https://github.com/openUC2/imswitch.git` should work.
+* Add in the ImSwitch-specific configuration and install steps by running `./patch_pi_gen.sh`.
 * Build the image, usually with `cd pi-gen` then `./build-docker.sh`.
 
 You may want to familiarise yourself with the upstream [pi-gen] which has a pretty good README. 
@@ -32,14 +33,14 @@ You may want to familiarise yourself with the upstream [pi-gen] which has a pret
 To clone the repository includin `pi-gen`, you will need to [enable submodules], which is as simple as adding `--recurse-submodules` to your clone command. It can also be done after the fact, if you see the link to [enable submodules]. To clone with submodules, use:
 
 ```
-git clone --recurse-submodules https://gitlab.com/openflexure/openflexure-pi-os.git
+git clone --recurse-submodules https://github.com/openUC2/imswitch.git
 ```
 
 This will clone all the files in this repository, plus the whole `pi-gen` repository, and ensures that you have the right version of `pi-gen` (it references a specific commit).
 
-### OpenFlexure-specific install steps
+### ImSwitch-specific install steps
 
-We add in two "stages" to the 'pi-gen' build process, to install the OpenFlexure software.  Stage 2a runs after we've built a "Raspberry Pi OS Lite" image (i.e. no graphical interface) and includes the server and command-line clients. Stage 4a runs after we have a full graphical desktop version of Raspberry Pi OS, and installs the OpenFlexure desktop image and OpenFlexure Connect graphical client.
+We add in two "stages" to the 'pi-gen' build process, to install the ImSwitch software.  Stage 2a runs after we've built a "Raspberry Pi OS Lite" image (i.e. no graphical interface) and includes the server and command-line clients. Stage 4a runs after we have a full graphical desktop version of Raspberry Pi OS, and installs the ImSwitch desktop image and ImSwitch React APP / graphical client.
 
 Each "stage" is a folder with a number of steps in it, which are run in sequence.  Each step contains three types of file, which are also read in alphabetical order:
 
